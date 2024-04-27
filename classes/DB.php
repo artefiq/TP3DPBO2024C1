@@ -29,7 +29,7 @@ class DB
 
     function getResult()
     {
-        return mysqli_fetch_array($this->result);
+        return mysqli_fetch_assoc($this->result);
     }
 
     function executeAffected($query = "")

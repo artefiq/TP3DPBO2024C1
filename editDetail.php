@@ -30,6 +30,8 @@ if (is_numeric($id)) {
     $jabatan->getJabatan();
     $dataJabatan = $jabatan->getResult();
 
+    var_dump($dataDivisi);
+
     if ($row) {
         // Append form HTML to $data
         $data .= '<form action="#" method="POST">
@@ -67,15 +69,13 @@ if (is_numeric($id)) {
         <td>
         <select name="divisi_id">';
 
-        $numItemsDivisi = count($dataDivisi) / 2;
-        for ($i = 0; $i < $numItemsDivisi; $i++) {
-            $value = array_slice($dataDivisi, $i * 2, 2);
-            $data .= '<option value="' . $value['divisi_id'] . '"';
-            if ($value['divisi_id'] == $row['divisi_id']) {
-                $data .= ' selected';
-            }
-            $data .= '>' . $value['divisi_nama'] . '</option>';
-        }
+        // foreach ($dataDivisi as $value) {
+        //     $data .= '<option value="' . $value['divisi_id'] . '"';
+        //     if ($value['divisi_id'] == $row['divisi_id']) {
+        //         $data .= ' selected';
+        //     }
+        //     $data .= '>' . $value['divisi_nama'] . '</option>';
+        // }
 
         $data .= '</select>
         </td>
@@ -86,15 +86,13 @@ if (is_numeric($id)) {
         <td>
         <select name="jabatan_id">';
 
-        $numItemsJabatan = count($dataJabatan) / 2;
-        for ($i = 0; $i < $numItemsJabatan; $i++) {
-            $value = array_slice($dataJabatan, $i * 2, 2);
-            $data .= '<option value="' . $value['jabatan_id'] . '"';
-            if ($value['jabatan_id'] == $row['jabatan_id']) {
-                $data .= ' selected';
-            }
-            $data .= '>' . $value['jabatan_nama'] . '</option>';
-        }
+        // foreach ($dataJabatan as $value) {
+        //     $data .= '<option value="' . $value['jabatan_id'] . '"';
+        //     if ($value['jabatan_id'] == $row['jabatan_id']) {
+        //         $data .= ' selected';
+        //     }
+        //     $data .= '>' . $value['jabatan_nama'] . '</option>';
+        // }
 
         $data .= '</select>
         </td>
